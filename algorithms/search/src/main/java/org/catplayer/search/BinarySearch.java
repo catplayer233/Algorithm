@@ -1,10 +1,10 @@
-package search;
+package org.catplayer.search;
 
 import java.util.Arrays;
 import java.util.Scanner;
 
 /**
- * binary search
+ * binary org.catplayer.search
  *
  * @author catplayer
  * @since 1.0

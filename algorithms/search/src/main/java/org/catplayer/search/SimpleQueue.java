@@ -1,4 +1,4 @@
-package search;
+package org.catplayer.search;
 
 import java.util.Objects;
 
