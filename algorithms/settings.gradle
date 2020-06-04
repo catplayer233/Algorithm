@@ -1,0 +1,8 @@
+rootProject.name = 'algorithms'
+include('datastruct')
+include('search')
+include('sort')
+include('graph')
+include('fundamentals')
+include('utils')
+
