@@ -1,1 +1,8 @@
-/algorithms/.idea/
+.gradle
+.DS_Store
+.idea
+/build/
+/datastruct/build/
+/search/build/
+/sort/build/
+/utils/build/

@@ -1,4 +1,4 @@
-rootProject.name = 'algorithms'
+rootProject.name = 'Algorithm'
 include('datastruct')
 include('search')
 include('sort')
