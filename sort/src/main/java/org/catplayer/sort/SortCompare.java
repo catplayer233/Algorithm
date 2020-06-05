@@ -3,9 +3,7 @@ package org.catplayer.sort;
 import edu.princeton.cs.algs4.StdOut;
 import edu.princeton.cs.algs4.StdRandom;
 import edu.princeton.cs.algs4.Stopwatch;
-import org.catplayer.sort.algorithms.InsertionSorter;
-import org.catplayer.sort.algorithms.SelectionSorter;
-import org.catplayer.sort.algorithms.Sorter;
+import org.catplayer.sort.algorithms.*;
 
 /**
  * compare sort algorithms's performance util
@@ -19,18 +17,25 @@ public class SortCompare {
 
     public static double time(String algorithm, Double[] array) {
         SorterAlgorithms sorterAlgorithm = SorterAlgorithms.get(algorithm);
-        Sorter<Double> sorter;
+        Sorter sorter;
         switch (sorterAlgorithm) {
             case INSERTION:
-                sorter = new InsertionSorter<>();
+                sorter = new InsertionSorter();
                 break;
             case SELECTION:
-                sorter = new SelectionSorter<>();
+                sorter = new SelectionSorter();
                 break;
             case HEAP:
             case MERGE:
+//                sorter = new MergeSorter();
+                sorter = new MergeSorter(false);
+                break;
             case QUICK:
+                sorter = new QuickSorter();
+                break;
             case SHELL:
+                sorter = new ShellSorter();
+                break;
             default:
                 throw new IllegalArgumentException("unsupported algorithms " + sorterAlgorithm);
         }

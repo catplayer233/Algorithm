@@ -1,16 +1,18 @@
 package org.catplayer.sort.algorithms;
 
 /**
- * insertion org.catplayer.sort
+ * insertion sort
  * <p>
  * every time keep a relative sorted sub array util insert the last element
+ * <p>
+ * o(n^2)
  *
  * @author catplayer
  * @since 1.0
  */
-public class InsertionSorter<T extends Comparable<T>> extends Sorter<T> {
+public class InsertionSorter extends Sorter {
     @Override
-    protected T[] doSort(T[] original) {
+    protected Comparable[] doSort(Comparable[] original) {
         //start from the second element
         for (int i = 1; i < original.length; i++) {
             //the different between the selection org.catplayer.sort and the insertion org.catplayer.sort
