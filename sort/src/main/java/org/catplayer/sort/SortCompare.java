@@ -26,6 +26,8 @@ public class SortCompare {
                 sorter = new SelectionSorter();
                 break;
             case HEAP:
+                sorter = new HeapSorter();
+                break;
             case MERGE:
 //                sorter = new MergeSorter();
                 sorter = new MergeSorter(false);
