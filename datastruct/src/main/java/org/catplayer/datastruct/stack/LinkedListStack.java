@@ -29,7 +29,7 @@ public class LinkedListStack<T> implements Iterable<T> {
 
     public T pop() {
         if (isEmpty()) {
-            throw new RuntimeException("the org.catplayer.datastruct.stack is empty!");
+            throw new RuntimeException("the stack is empty!");
         }
 
         Node<T> targetNode = node;

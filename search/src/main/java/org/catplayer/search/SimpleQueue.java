@@ -2,61 +2,74 @@ package org.catplayer.search;
 
 import java.util.Objects;
 
+/**
+ * a simple queue based on linked list
+ * <p>
+ * just used for FIFO
+ *
+ * @param <T>
+ * @author catplayer
+ * @since 1.0
+ */
 public class SimpleQueue<T> {
 
 
-    private Node<T> first;
-    private Node<T> end;
+    private Node<T> head;
+    private Node<T> tail;
 
-    public void add(T item) {
+    public void enqueue(T item) {
         Node<T> node = new Node<>(item);
-        if (Objects.isNull(first)) {
-            first = node;
-            end = node;
+        if (Objects.isNull(head)) {
+            head = tail = node;
         } else {
-            end.next = node;
+            tail.next = node;
+            tail = node;
         }
 
     }
 
-    public T get() {
-        if (Objects.isNull(first)) {
-            System.out.println("no item");
+    public T dequeue() {
+        if (Objects.isNull(head)) {
+//            System.out.println("no item");
             return null;
         }
-        T item = first.item;
-        if (Objects.isNull(first.next)) {
-            first = null;
-            end = null;
+        T item = head.item;
+        //only one node
+        if (Objects.isNull(head.next)) {
+            head = tail = null;
         } else {
-            first = first.next;
+            head = head.next;
         }
         return item;
 
+    }
+
+    public boolean isEmpty() {
+        return head == null;
     }
 
 
     /**
      * node item keep the node self item, next keep the next in node
      *
-     * @param <T>
+     * @param <K>
      */
-    private class Node<T> {
-        private final T item;
-        private Node<T> next;
+    private static class Node<K> {
+        private final K item;
+        private Node<K> next;
 
-        public Node(T item) {
+        public Node(K item) {
             this.item = item;
         }
     }
 
     public static void main(String[] args) {
         SimpleQueue<Integer> queue = new SimpleQueue<>();
-        queue.add(1);
-        queue.add(5);
-        System.out.println(queue.get());
-        queue.add(7);
-        System.out.println(queue.get());
+        queue.enqueue(1);
+        queue.enqueue(5);
+        System.out.println(queue.dequeue());
+        queue.enqueue(7);
+        System.out.println(queue.dequeue());
     }
 
 }
